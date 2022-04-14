@@ -6,14 +6,30 @@ public class GuessingGame {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("enter age");
+		int luckyNo = 7;
+		int count = 1;
+	
+		System.out.println("Guess a number between 1 and 10.");
 		
-		int luckyNo = scanner.nextInt();
+		int guess = scanner.nextInt();
 		
-		if (luckyNo == 30) {
-			System.out.println("good job");
-		} else {
-			System.out.println("try again");
+		while (guess != luckyNo) {
+			count++;
+			
+			if (guess > luckyNo ) {
+				System.out.println("Too high. Try again.");
+				guess = scanner.nextInt();
+			} else {
+				System.out.println("Too low. Try again");
+				guess = scanner.nextInt();
+			}
+//		System.out.println("Try again.");
+//		guess = scanner.nextInt();
+		
+		}
+		if (guess == luckyNo) {
+			System.out.println("Good job. Number of tries: " + count);
+
 		}
 
 	}
