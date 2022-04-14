@@ -46,6 +46,3 @@ public class BasicsDemo {
 
 }
 
-// 1. take input from user.
-// 2. if it matches lucky number, print "you guessed it!" to console
-// 3. else print "try again."
