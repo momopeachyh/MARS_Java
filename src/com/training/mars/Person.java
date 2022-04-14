@@ -1,7 +1,25 @@
 package com.training.mars;
 
 public class Person {
-
+	
+//	Eclipse makes this constructor automatically
+//	public Person() {
+//}
+	
+	
+//	no-arg constructor
+	public Person() {
+		super();
+	}
+	
+	
+//	constructor with fields
+	public Person (int height, int weight) {
+		super();
+		this.height = height;
+		this.weight = weight;
+	}
+	
 //	instance variables
 	private int height;
 	private int weight;
