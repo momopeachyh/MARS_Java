@@ -1,7 +1,7 @@
 package com.training.mars;
 
 public class MyClass {
-	public static void main(String args[] ){
+	public static void main(String args[] ) throws myException {
 		System.out.println("This is the first Java file");
 		
 		byte byteValue = 12;
@@ -33,8 +33,22 @@ public class MyClass {
 		p2.setHeight(180);
 		p2.setWeight(90);
 		System.out.println(p2.getPersonInfo());
+		
+	int num1 = 8;
 	
-		
-		
+	int result = 0; //runtime exception. Thrown at runtime
+	
+	try {
+	System.out.println(result = num1/0);
+	}
+	
+	catch(ArithmeticException e) {
+		System.out.println("cannot divide by 0");
+	}
+	
+//	throws checked exception (compile time exception)
+	if (p1.getWeight() > 75) {
+		throw new MyException("Weight should be less than 75 in this category.");
+	}
 	}
 }
