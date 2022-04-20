@@ -31,7 +31,8 @@ public class StreamDemo {
 		
 		List<String> colors = Arrays.asList("red", "blue", "green", "yellow");
 		Stream<String> colorStream = colors.stream();
-		Stream<String> colorStreamHi = colorStream.map())
+//		help with line 35, please
+//		Stream<String> colorStreamHi = colorStream.map())
 //		List<String> colorsHi = colors.stream().map(null)
 		
 	}

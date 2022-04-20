@@ -22,7 +22,7 @@ public class CollectionDemo {
 		Set<Student> studentSet = new TreeSet<>();
 		
 //		to sort a hashset
-		Set<Student> studentSet = new TreeSet<>();
+//		Set<Student> studentSet = new TreeSet<>();
 		
 //		Map<String, Student> studentMap = new HashMap<>();
 		
