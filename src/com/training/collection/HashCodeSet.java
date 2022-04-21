@@ -20,7 +20,7 @@ public class HashCodeSet {
 		studentList.add(stud5);
 		
 		for(Student student:studentList) {
-			System.out.println(student.getName());
+			System.out.println(student.getStudentName());
 		}
 		
 	}

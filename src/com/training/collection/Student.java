@@ -1,47 +1,58 @@
 package com.training.collection;
+import java.util.*;
 
-public class Student implements Comparable<Student>{
-
-	private String name;
-	private int rollNo;
+public class Student {
+	private String studentName;
+	private int id;
 	private String grade;
-	public Student(String name, int rollNo, String grade) {
+	
+	public Student(String studentName, int id, String grade) {
 		super();
-		this.name = name;
-		this.rollNo = rollNo;
+		this.studentName = studentName;
+		this.id = id;
 		this.grade = grade;
 	}
-	public String getName() {
-		return name;
+
+	public String getStudentName() {
+		return studentName;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
-	public int getRollNo() {
-		return rollNo;
+
+	public int getId() {
+		return id;
 	}
-	public void setRollNo(int rollNo) {
-		this.rollNo = rollNo;
+
+	public void setId(int id) {
+		this.id = id;
 	}
+
 	public String getGrade() {
 		return grade;
 	}
+
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(studentName, id, grade);
+	}
 	
 	@Override
-	public int compareTo(Student o) {
-//		Sorts treeset items by name
-//		return this.getName().compareTo(o.getName()); 
-//		sorts treeset items (students) by roll number
-		if(this.getRollNo() > o.getRollNo()) {
-			return 1;
-		} else if(this.getRollNo() < o.getRollNo()) {
-			return -1;
-		} else {
-			return 0;
-		}
-	
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		return Objects.equals(grade, other.grade) && id == other.id && Objects.equals(studentName, other.studentName);
 	}
+	
+	
 }
