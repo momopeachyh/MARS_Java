@@ -1,7 +1,7 @@
 package com.training.mars;
 
 public class MyClass {
-	public static void main(String args[] ) throws myException {
+	public static void main(String args[]) throws MyException {
 		System.out.println("This is the first Java file");
 		
 		byte byteValue = 12;
@@ -34,21 +34,32 @@ public class MyClass {
 		p2.setWeight(90);
 		System.out.println(p2.getPersonInfo());
 		
+		if(p1.getWeight() > 75) {
+			throw new MyException("Weight over 75");
+		}
+		
 	int num1 = 8;
-	
-	int result = 0; //runtime exception. Thrown at runtime
+	int result = 0;
+	String str = null;
 	
 	try {
-	System.out.println(result = num1/0);
+	result = num1/0; //runtime exception. Thrown at runtime
+//	System.out.println(str.length());  //this line isn't even executed since line 42 is an exception
 	}
-	
+//	try {
+//		System.out.println(str.length());
+//	}
 	catch(ArithmeticException e) {
-		System.out.println("cannot divide by 0");
+		System.out.println("cannot divide by zero.");
+		System.out.println("message is: " + e.getMessage());
+		e.printStackTrace(); //another way to show an exception message
 	}
+	catch(NullPointerException e) {
+		System.out.println("String cannot be null.");
+	}
+	System.out.println("result is "+ result);
 	
-//	throws checked exception (compile time exception)
-	if (p1.getWeight() > 75) {
-		throw new MyException("Weight should be less than 75 in this category.");
-	}
+	double salary = 5000;
+
 	}
 }
