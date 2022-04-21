@@ -50,8 +50,8 @@ public class BillCalculator {
 //			if usage > 1000 units
 			if(customer[i].getUnit_consumption() > 1000) {
 				billTotal = ((customer[i].getUnit_consumption() - 200) * .75 + 50);
-//				bills[i] = billTotal;
-				 bills[i] = billTotal;
+				System.out.println(df.format(billTotal));
+				bills[i] = billTotal;
 //				if 500 < usage < 1000
 				} else if (customer[i].getUnit_consumption() <= 1000 && customer[i].getUnit_consumption() > 500){
 				billTotal = (customer[i].getUnit_consumption() - 200) * 1 + 50;
@@ -67,8 +67,11 @@ public class BillCalculator {
 				billTotal = 50;
 				bills[i] = billTotal;
 				System.out.println(df.format(billTotal));
-			} else {
-				System.out.println("Unit consumption must be greater than 50.");
+			} else try {
+				throw new MinimumException ("Unit consumption must be greater than 50.");
+			}
+			catch(MinimumException e) {
+				System.out.println(e.getMessage());
 			}
 //			for line break
 			System.out.println();
@@ -77,7 +80,26 @@ public class BillCalculator {
 	for(int i=0; i<bills.length; i++) {
 		System.out.println(df.format(bills[i]));
 	}
-				
+	
+//	Problem Statement: 
+//
+//		Provide a code solution to calculate electricity bill payment for group of consumers based on the electric consumption over a period based on Java 9 code solution of array etc features. 
+//
+//		Description: National Electricity Corporation (NEC) charges monthly electricity charges based on consumption of its consumers. The rate of charge is as follows: 
+//
+//		Up to 200 units every consumer must pay flat an amount $50. 
+//
+//		From 201 to 500 units rate is $1.25/unit. 
+//
+//		From 501 to 1000 units’ rate is $1.00/unit. 
+//
+//		From 1001 units and above rate is $0.75/unit. 
+//
+//		Consumption unit must be in whole number. 
+//
+//		The computer operator of NEC normally accepts consumer’s details like consumer number, name, unit consumption in a comma(,) separate String to generate bill (eg: 653,Steve Jones,754). The operator normally generates bill for number of consumers at a time. So before starting operation, the operator asks for number of consumers’ bill to prepare. All bills are stored in an array. Finally display the contains of array, all decimal figures must show 2 decimal places. 
+//
+//		If number of Units is less than 50, the application should throw MinimumUnitsException and display a message “No of units can not be less than 50” 		
 		
 	}
 
